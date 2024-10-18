@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: black; /* 背景颜色 */
+        margin: 10px; /* 确保没有外边距 */
+        padding: 1px; /* 添加内边距，使图标在圆形内居中 */ 
+    }
+    .container {
+            text-align: center; /* 让文本居中 */
+            color: white; /* 字体颜色为白色 */
+        }
+        
+    .icons {
+        display: flex; 
+        justify-content: center; /* 居中对齐图标 */
+        margin: 20px; /* 上下留一些空间 */
+    }
+    .icon  {
+        width: 170px; /* 图标宽度 */
+        height: 170px; /* 图标高度 */
+        cursor: pointer; /* 鼠标悬停时显示为手型 */
+        margin: 0 20px; /* 图标间距 */
+        padding: 25px; /* 增加内边距，使图标在圆形框内更居中 */
+        border: 1px solid white; /* 增加边框宽度为8px */
+        border-radius: 30%; /* 创建圆形边框 */
+        display: flex; 
+        align-items: center; /* 垂直居中 */
+        justify-content: center; /* 水平居中 */
+    }
+    .result {
+        margin-top: 20px;
+        font-size: 2em; /* 设置结果文本的大小 */
+        color: white; /* 结果文本颜色为白色 */
+    }
+    
+    .final-result {
+    margin-top: 20px; /* 调整与上方内容的间距 */
+    font-size: 2em; /* 设置字体大小 */
+    color: white; /* 字体颜色为白色 */
+    }
+
+    .small-icon {
+        width: 30px; /* 小图标的宽度 */
+        height: 30px; /* 小图标的高度 */
+        margin: 0 5px; /* 小图标之间的间距 */
+        vertical-align: middle; /* 垂直对齐 */
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="icons">
+            <img src="rock.png" alt="石头" class="icon rock" id="rock">
+            <img src="paper.png" alt="布" class="icon paper" id="paper">
+            <img src="scissors.png" alt="剪刀" class="icon scissors" id="scissors">
+        </div>
+        <div class="final-result" style="display: none;">
+            <p><span id="game-result"></span></p>
+            <p>
+                You <span id="your-choice-icon"></span> 
+                <span id="computer-choice-icon"></span> Computer
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
