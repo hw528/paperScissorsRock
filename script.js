@@ -6,7 +6,7 @@ const gameResultElement = document.getElementById('game-result');
 const scoreElement = document.querySelector('.score');
 
 const updateScoreboard = () => {
-    scoreElement.innerHTML = `Wins: ${scoreWin}, Losses: ${scoreLoss}, Ties: ${scoreTie}`;
+    scoreElement.innerHTML = `Wins: ${scoreWin} &nbsp;&nbsp;&nbsp;  Losses: ${scoreLoss} &nbsp;&nbsp;&nbsp;  Ties: ${scoreTie}`;
 };
 
 const playGame = userChoice => {
@@ -48,3 +48,5 @@ const autoPlayButtonSwitch = () => {
 ['rock', 'paper', 'scissors'].forEach(choice => {
     document.getElementById(choice).addEventListener('click', () => playGame(choice));
 });
+
+updateScoreboard();
