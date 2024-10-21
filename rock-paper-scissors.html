@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <style>body {
+    <style>
+        body {
             font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
@@ -14,56 +15,77 @@
             margin: 10px; /* 确保没有外边距 */
             padding: 1px; /* 添加内边距，使图标在圆形内居中 */ 
             }
-        .container {
-            text-align: center; /* 让文本居中 */
-            color: white; /* 字体颜色为白色 */
-            }
-            
-        .icons {
-            display: flex; 
-            justify-content: center; /* 居中对齐图标 */
-            margin: 20px; /* 上下留一些空间 */
-            }
-        .icon  {
-            width: 170px; /* 图标宽度 */
-            height: 170px; /* 图标高度 */
-            cursor: pointer; /* 鼠标悬停时显示为手型 */
-            margin: 0 20px; /* 图标间距 */
-            padding: 25px; /* 增加内边距，使图标在圆形框内更居中 */
-            border: 1px solid white; /* 增加边框宽度为8px */
-            border-radius: 30%; /* 创建圆形边框 */
-            display: flex; 
-            align-items: center; /* 垂直居中 */
-            justify-content: center; /* 水平居中 */
-            }
-        
-        .result {
-            margin-top: 20px;
-            font-size: 2em; /* 设置结果文本的大小 */
-            color: white; /* 结果文本颜色为白色 */
+            .container {
+                text-align: center; /* Center text inside the container */
+                color: white;
             }
 
-        .final-result {
-            margin-top: 20px; /* 调整与上方内容的间距 */
-            font-size: 2em; /* 设置字体大小 */
-            color: white; /* 字体颜色为白色 */
+            .icons {
+                display: flex;
+                justify-content: center; /* Horizontally center the icons */
+                margin: 20px 0;
             }
-        .small-icon {
-            width: 30px; /* 小图标的宽度 */
-            height: 30px; /* 小图标的高度 */
-            margin: 0 5px; /* 小图标之间的间距 */
-            vertical-align: middle; /* 垂直对齐 */
+
+            .icon {
+                width: 170px;
+                height: 170px;
+                cursor: pointer;
+                margin: 0 20px;
+                padding: 25px;
+                border: 1px solid white;
+                border-radius: 30%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .button-container {
+                display: flex;
+                justify-content: center; /* Center the buttons horizontally */
+                margin-top: 20px;
+            }
+
+            .nbButton {
+                font-size: 30px;
+                cursor: pointer;
+                margin: 0 20px; /* Space between the buttons */
+                margin-top: 40px;
+                padding: 10px 20px;
+                background-color: white;
+                color: black;
+                border: none;
+                border-radius: 20px;
+            }
+
+            .result, .final-result, .score {
+                font-size: 2em;
+                color: white;
+            }
+
+            .small-icon {
+                width: 30px;
+                height: 30px;
+                margin: 0 5px;
+                vertical-align: middle;
             }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Rock Paper Scissors</h1>
+        
         <div class="icons">
             <img src="rock.png" alt="石头" class="icon rock" id="rock">
             <img src="paper.png" class="icon paper" alt="布" id="paper">
             <img src="scissors.png" class="icon scissors" alt="剪刀" id="scissors">
         </div>
+        
+        <!-- Button container placed directly below the icons -->
+        <div class="button-container">
+            <button onclick="reset()" class="nbButton">Reset Score</button>
+            <button onclick="autoPlayButtonSwitch()" class="nbButton">Auto Play</button>
+        </div>
+        
         <div class="final-result" style="display: none;">
             <p><span id="game-result"></span></p>
             <p>
@@ -71,7 +93,10 @@
                 <span id="computer-choice-icon"></span> Computer
             </p>
         </div>
+        
+        <p class="score"></p>
     </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

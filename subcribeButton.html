@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;             
+            justify-content: center;    
+            align-items: center;        
+            height: 100vh;              
+            margin: 0;       
+        }
+        button {
+            font-size: 140px;
+            border: none;               
+            background-color: black;
+            color: aliceblue;
+            width: 800px;              
+            height: 200px; 
+            border-radius: 200px;
+            transition: background-color 0.5s, color 0.5s;  /* 平滑过渡 */
+        }
+    </style>
+</head>
+<body>
+    <button>Subscribe</button>
+
+    <script>        
+        const subButton = document.querySelector('button');
+        let subscribed = false; // 初始化布尔变量
+
+        function changeColorTitle() {
+            if (!subscribed) {
+                subButton.style.color = 'black';
+                subButton.textContent = 'Subscribed';
+                subButton.style.backgroundColor = 'rgb(230, 230, 230)';  // 使用 RGB 颜色值
+            } else {
+                subButton.style.backgroundColor = 'black';
+                subButton.style.color = 'white';
+                subButton.textContent = 'Subscribe';
+            }
+            subscribed = !subscribed;  // 切换状态
+        }
+
+        subButton.addEventListener('click', changeColorTitle);
+    </script>
+
+</body>
+</html>
